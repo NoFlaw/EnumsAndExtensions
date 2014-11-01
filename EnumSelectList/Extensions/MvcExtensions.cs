@@ -54,8 +54,7 @@ namespace EnumsAndExtensions.Extensions
 
             if ((attributes != null) && (attributes.Length > 0))
                 return attributes[0].Description;
-            else
-                return value.ToString();
+            return value.ToString();
         }
 
         public static MvcHtmlString MyEnumDropDownListFor<TModel, TEnum>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TEnum>> expression)
