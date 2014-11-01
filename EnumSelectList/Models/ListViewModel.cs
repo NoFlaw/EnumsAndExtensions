@@ -14,4 +14,4 @@ namespace EnumsAndExtensions.Models
 
         public CoolEnum MyCoolEnum { get; set; }
     }
-}
+} 
