@@ -13,7 +13,9 @@
     
     @*MVC Default Approach*@
     @Html.LabelFor(viewModel => viewModel.SelectedEnumItemId)
-    @Html.DropDownListFor(viewModel => viewModel.MyCoolEnum, new SelectList(Enum.GetValues(typeof(CoolEnum))))
+    @Html.DropDownListFor(viewModel => viewModel.SelectedEnumItemId, Enum.GetNames(typeof(CoolEnum)).ToArray().Select(f => new SelectListItem() { Text = f, Value = f}), "- SELECT -")
+    @*@Html.DropDownListFor(viewModel => viewModel.MyCoolEnum, new SelectList(Enum.GetValues(typeof(CoolEnum)), @Model.SelectedEnumItemId), " - SELECT -")*@
+    
 
     @*Using Extension Methods*@
     @Html.LabelFor(viewModel => viewModel.SelectedEnumItemId)
@@ -22,10 +24,10 @@
     @Html.LabelFor(viewModel => viewModel.SelectedEnumItemId)
     @Html.MyEnumDropDownListFor(x => x.MyCoolEnum)
     
-    @*Built through HomeController*@
+
+    @*Built through HomeController Using Extension Methods with Working SelectedValue*@
     @Html.LabelFor(viewModel => viewModel.SelectedEnumItemId)
-    @Html.DropDownListFor(viewModel => viewModel.SelectedEnumItemId, Model.EnumList)
-   
+    @Html.DropDownListFor(viewModel => viewModel.SelectedEnumItemId, Model.EnumList, " - SELECT -")  
 </div>
 
 <div class="row">
