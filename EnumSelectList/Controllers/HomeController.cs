@@ -17,7 +17,7 @@ namespace EnumsAndExtensions.Controllers
 
             IEnumerable<CoolEnum> enumList = Enum.GetValues(typeof(CoolEnum)).Cast<CoolEnum>();
 
-            viewModel.SelectedEnumItemId = 2;
+            viewModel.SelectedEnumItemId = 2; 
 
             viewModel.EnumList = from item in enumList
                                  select new SelectListItem
